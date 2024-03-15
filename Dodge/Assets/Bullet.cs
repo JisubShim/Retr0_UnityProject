@@ -16,11 +16,14 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // 태그가 Player일 경우
         if(other.tag == "Player")
         {
             PlayerController playerController = other.GetComponent<PlayerController>();
 
-            if(playerController != null)
+            // other 게임 오브젝트에 PlayerController 스크립트가 없으면 null 반환
+            // 따라서 이렇게 실수를 대비해주어야 함
+            if (playerController != null) 
             {
                 playerController.Die();
             }

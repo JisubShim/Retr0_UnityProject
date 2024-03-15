@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour
         } */
 
         // 수평축과 수직축의 입력값을 감지하여 저장
-        float xInput = Input.GetAxis("Horizontal");
-        float zInput = Input.GetAxis("Vertical");
+        float xInput = Input.GetAxisRaw("Horizontal");
+        float zInput = Input.GetAxisRaw("Vertical");
 
         // Rigidbody의 velocity에 newVelocity 할당
         // 대각선으로 이동할 때 더 빨리 움직이는 버그 수정
